@@ -14,3 +14,13 @@ def get_match_data(match_id):
         return None
 
     return response.json()
+
+def get_player_data(player_id):
+    url = f"https://api.opendota.com/api/players/{player_id}/recentMatches"
+    response = requests.get(url)
+
+    if response.status_code != 200:
+        print("No match history found.")
+        return []
+
+    return response.json()[:10]
