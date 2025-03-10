@@ -19,7 +19,15 @@ def analyze_match(match_id):
         kills = player.get('kills', 0)
         deaths = player.get('deaths', 0)
         assists = player.get('assists', 0)
-        print(f"- {player_name} {hero_name} {kills}/{deaths}/{assists}")
+        last_hits = player.get("last_hits", 0)
+        denies = player.get("denies", 0)
+        gpm = player.get("gold_per_min", 0)
+        xpm = player.get("xp_per_min", 0)
+        hero_damage = player.get("hero_damage", 0)
+        hero_healing = player.get("hero_healing", 0)
+        net_worth = player.get("net_worth", 0)
+
+        print(f"- {player_name} - {hero_name} {kills}/{deaths}/{assists} LH/D:{last_hits}/{denies}")
 
     print(f"Radiant Win: {match_data['radiant_win']}")
     print(f"Radiant Score: {match_data['radiant_score']} \n")
