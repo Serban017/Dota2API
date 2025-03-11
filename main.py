@@ -27,7 +27,8 @@ def main():
                 print("❌ Invalid input! Player ID should be a number.")
                 continue
             analyze_player(player_id)
-
+        elif choice == "3":
+            exit()
         else:
             print("❌ Invalid choice! Please select 1 or 2.")
 

@@ -35,4 +35,25 @@ def get_win_rate(player_id):
         return []
     
     return response.json()
-    
+
+def get_player_rank_data(player_id):
+    url = f"https://api.opendota.com/api/players/{player_id}"
+    response = requests.get(url)
+
+
+    if response.status_code != 200:
+        print("❌ Error fetching player rank data.")
+        return None
+
+    return response.json()
+
+def get_item_lookup():
+    items_url = "https://api.opendota.com/api/constants/items"
+    response = requests.get(items_url)
+
+    if response.status_code != 200:
+        print("❌ Error fetching item data.")
+        return {}
+
+    items_data = response.json()
+    return {details["id"]: name.replace("_", " ").title() for name, details in items_data.items()}
