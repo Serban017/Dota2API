@@ -27,17 +27,17 @@ def analyze_match(match_id):
         hero_healing = player.get("hero_healing", 0)
         net_worth = player.get("net_worth", 0)
 
-        print(f"- {player_name} - {hero_name} {kills}/{deaths}/{assists} LH/D:{last_hits}/{denies}")
+        print(f"- {player_name} | {hero_name} | {kills}/{deaths}/{assists} LH/D:{last_hits}/{denies}")
 
-    print(f"Radiant Win: {match_data['radiant_win']}")
-    print(f"Radiant Score: {match_data['radiant_score']} \n")
-
-    if match_data['radiant_win'] is False:
-        print(f"Dire Win: True")
+    if match_data['radiant_win']:
+        print("Radiant Win ✅")
+        print("Dire Loss ❌")
     else:
-        print(f"Dire Win: False")
+        print("Radiant Loss ❌")
+        print("Dire Win ✅")
 
-    print(f"Dire Score: {match_data['dire_score']} \n")
+    print(f"Radiant Score: {match_data['radiant_score']}\n")
+    print(f"Dire Score: {match_data['dire_score']}\n")
 
     match_duration = match_data['duration']
     print(f"The match time was: {convert(match_duration)}")

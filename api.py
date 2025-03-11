@@ -24,3 +24,15 @@ def get_player_data(player_id):
         return []
 
     return response.json()[:10]
+
+def get_win_rate(player_id):
+
+    url = f"https://api.opendota.com/api/players/{player_id}/wl"
+    response = requests.get(url)
+
+    if response.status_code !=200: 
+        print("❌ Error fetching win rate data.")
+        return []
+    
+    return response.json()
+    

@@ -22,7 +22,7 @@ def main():
             analyze_match(match_id)
 
         elif choice == "2":
-            player_id = input("Enter player ID (Steam ID): ")
+            player_id = input("Enter player ID (Steam ID): \n ")
             if not player_id.isdigit():
                 print("❌ Invalid input! Player ID should be a number.")
                 continue
