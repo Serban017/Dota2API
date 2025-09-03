@@ -12,7 +12,7 @@ RANK_NAMES = {
 }
 
 def analyze_player(player_id):
-    matches  = get_player_data(player_id)
+    matches = get_player_data(player_id)
     heroes_lookup = get_hero_lookup()
     win_data = get_win_rate(player_id)
     rank_data = get_player_rank_data(player_id)

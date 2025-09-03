@@ -6,6 +6,7 @@ heroes_lookup = get_hero_lookup()
 def analyze_match(match_id):
     match_data = get_match_data(match_id)
     items_lookup = get_item_lookup()
+    print(type(match_data))
 
     if not match_data or "players" not in match_data:
         print("Error: Match data is incomplete or unavailable.")
